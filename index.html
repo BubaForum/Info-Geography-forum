@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Борис Михайлов - вопрос</title>
+    <title>Петр Павлов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #8c64ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,52 +134,79 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #850314</span>
+            <span>Вопрос #858625</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">БМ</div>
+                <div class="avatar">ПП</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Борис Михайлов
-                        <span class="badge">Ученик</span>
-                        <span class="reputation">133</span>
+                        Петр Павлов
+                        <span class="badge">Гуру</span>
+                        <span class="reputation">1511</span>
                     </div>
                     <div class="meta">
-                        <span>05.01.2019</span>
+                        <span>20.07.2020</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 220</span>
+                        <span>👁 247</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                а расскажите мне о том что взорвет мне мозг!
+                молодежь расскажите что-нибудь из гео-информатики, просто мой внук её тоже занимается, хочется быть на 1 волне с ним
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">СМ</div>
+                <div class="answer-avatar">АБ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Степан Михайлов
+                        Александр Богданов
                         <span class="badge">Гуру</span>
-                        <span class="reputation">3060</span>
+                        <span class="reputation">9944</span>
                     </div>
                     <div class="meta">
-                        <span>28.02.2021</span>
+                        <span>04.12.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>.</div>
+                <div class='text-line'>Вот простой пример игры-кликера. Запускай, кликай на кнопку, смотри как растет счет.</div>
+<br>
+<pre class='code-content'>import tkinter as tk
+
+def update_score():
+    global score
+    score += 1
+    label.config(text=f"Счет: {score}")
+    button.config(bg="lightgreen")
+    after_click()
+
+def after_click():
+    button.config(bg="white")
+    root.after(100, update_score)
+
+root = tk.Tk()
+root.title("Игра Кликер")
+root.geometry("400x300")
+
+score = 0
+label = tk.Label(root, text="Счет: 0", font=("Arial", 24))
+label.pack(pady=20)
+
+button = tk.Button(root, text="КЛИКАЙ!", command=update_score, font=("Arial", 18), width=15, height=3)
+button.pack(pady=20)
+button.config(bg="white")
+
+root.mainloop()</pre>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 59</div>
-                <div class="rating-button">👎 11</div>
+                <div class="rating-button">👍 103</div>
+                <div class="rating-button">👎 10</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -187,51 +214,95 @@
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">ВЕ</div>
+        <div class="other-avatar" style="background: #ffc107;">РК</div>
         <div class="author-info">
             <div class="author-name">
-                Валерий Егоров
-                <span class="comment-badge">шутник</span>
+                Роман Комаров
+                <span class="comment-badge">оптимист</span>
             </div>
             <div class="meta">
-                <span>28.02.2021</span>
+                <span>04.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        🤨 А самому слабо разобраться?
+        😤 Да что ж вы такие беспомощные! Гугл в помощь, там всё есть.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 8</div>
-        <div class="rating-button">👎 12</div>
+        <div class="rating-button">👍 17</div>
+        <div class="rating-button">👎 7</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">РП</div>
+        <div class="other-avatar" style="background: #17a2b8;">ПА</div>
         <div class="author-info">
             <div class="author-name">
-                Роман Павлов
-                <span class="comment-badge">добряк</span>
+                Павел Андреев
+                <span class="comment-badge">местный</span>
             </div>
             <div class="meta">
-                <span>28.02.2021</span>
+                <span>04.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        🤔 Понятия не имею, даже не знаю что сказать. Может кто умнее подскажет.
+        😤 Да что ж вы такие беспомощные! Гугл в помощь, там всё есть.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
         <div class="rating-button">👍 6</div>
-        <div class="rating-button">👎 0</div>
+        <div class="rating-button">👎 7</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">ПС</div>
+        <div class="author-info">
+            <div class="author-name">
+                Павел Соколов
+                <span class="comment-badge">оптимист</span>
+            </div>
+            <div class="meta">
+                <span>04.12.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        😤 Да что ж вы такие беспомощные! Гугл в помощь, там всё есть.
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 5</div>
+        <div class="rating-button">👎 9</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #ffc107;">НЛ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Никита Лебедев
+                <span class="comment-badge">скептик</span>
+            </div>
+            <div class="meta">
+                <span>04.12.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        🤷‍♂️ Я вообще не шарю в этом. Разбирайся сам!
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 7</div>
+        <div class="rating-button">👎 5</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2017
+            © Форум пользователей 2016
         </div>
     </div>
 

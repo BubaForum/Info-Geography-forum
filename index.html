@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кирилл Петров - вопрос</title>
+    <title>Леонид Морозов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #ff9e00; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #8c64ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,22 +134,22 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #246614</span>
+            <span>Вопрос #470396</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">КП</div>
+                <div class="avatar">ЛМ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Кирилл Петров
-                        <span class="badge">Ученик</span>
-                        <span class="reputation">1108</span>
+                        Леонид Морозов
+                        <span class="badge">Знаток</span>
+                        <span class="reputation">4041</span>
                     </div>
                     <div class="meta">
-                        <span>05.03.2020</span>
+                        <span>16.04.2015</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 243</span>
+                        <span>👁 57</span>
                     </div>
                 </div>
             </div>
@@ -161,15 +161,15 @@
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">НМ</div>
+                <div class="answer-avatar">ЛС</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Никита Михайлов
-                        <span class="badge">Ученик</span>
-                        <span class="reputation">3278</span>
+                        Леонид Соловьев
+                        <span class="badge">Новичок</span>
+                        <span class="reputation">261</span>
                     </div>
                     <div class="meta">
-                        <span>05.12.2021</span>
+                        <span>20.09.2015</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
@@ -177,69 +177,59 @@
             <div class="answer-content">
                 <div class='text-line'>Решение на QGIS:</div>
 <br>
-<div class='text-line'>1. Откройте QGIS и добавьте векторный слой deforestation.shp</div>
-<div class='text-line'>2. Добавьте растровые слои LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif, LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
-<div class='text-line'>4. Сохраните результаты расчёта NDVI как новые растровые слои</div>
-<div class='text-line'>5. Используйте инструмент Zonal Statistics для вычисления среднего значения NDVI в границах каждого полигона вырубки для обоих NDVI слоёв</div>
-<div class='text-line'>6. Добавьте новые поля в атрибутную таблицу векторного слоя для хранения средних значений NDVI для каждой даты</div>
-<div class='text-line'>7. Вычислите разницу между NDVI 2025 и NDVI 2018 для каждого полигона</div>
-<div class='text-line'>8. Создайте выборку полигонов, где разница положительная, это будет указывать на увеличение биомассы растительности</div>
-<div class='text-line'>9. Подсчитайте количество таких полигонов</div>
+<div class='text-line'>1. Открой QGIS и добавь векторный слой deforestation.shp</div>
+<div class='text-line'>2. Добавь растровые слои LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif, LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
+<div class='text-line'>3. Перейди в меню Raster -&gt; Analysis -&gt; Raster Calculator</div>
+<div class='text-line'>4. Создай NDVI для 2018 года: (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip - LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip) / (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip + LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip)</div>
+<div class='text-line'>5. Создай NDVI для 2025 года: (LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip - LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip) / (LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip + LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip)</div>
+<div class='text-line'>6. Сохрани результаты NDVI как новые растровые слои</div>
+<div class='text-line'>7. Перейди в меню Vector -&gt; Analysis Tools -&gt; Zonal Statistics</div>
+<div class='text-line'>8. Выбери слой deforestation.shp и растровый слой NDVI 2018 года</div>
+<div class='text-line'>9. Повтори шаг 8 для NDVI 2025 года</div>
+<div class='text-line'>10. Добавь поля с результатами зональной статистики в атрибутивную таблицу deforestation.shp</div>
+<div class='text-line'>11. Выполни запрос в атрибутивной таблице deforestation.shp: "mean_2025" &gt; "mean_2018"</div>
+<div class='text-line'>12. Посчитай количество строк, удовлетворяющих условию</div>
 <br>
-<div class='text-line'>Код на Python:</div>
+<div class='text-line'>Решение кодом:</div>
 <br>
-<pre class='code-content'>3. Используйте инструмент Raster Calculator для создания NDVI слоёв для обеих дат. Формула для NDVI: (B5 - B4) / (B5 + B4)
-import os
-from qgis.core import *
-from qgis.analysis import QgsZonalStatistics
+<pre class='code-content'>import rasterio
+import geopandas as gpd
+import numpy as np
 
-# Пути к файлам
+def calculate_ndvi(band_nir, band_red):
+    ndvi = (band_nir - band_red) / (band_nir + band_red)
+    return ndvi
+
 shp_path = 'deforestation.shp'
 b4_2018_path = 'LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif'
 b5_2018_path = 'LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif'
 b4_2025_path = 'LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif'
 b5_2025_path = 'LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif'
 
-# Загрузка слоёв
-vector_layer = QgsVectorLayer(shp_path, 'Deforestation', 'ogr')
-raster_2018_b4 = QgsRasterLayer(b4_2018_path, 'B4_2018')
-raster_2018_b5 = QgsRasterLayer(b5_2018_path, 'B5_2018')
-raster_2025_b4 = QgsRasterLayer(b4_2025_path, 'B4_2025')
-raster_2025_b5 = QgsRasterLayer(b5_2025_path, 'B5_2025')
+deforestation = gpd.read_file(shp_path)
 
-# Расчёт NDVI
-ndvi_2018_path = 'ndvi_2018.tif'
-ndvi_2025_path = 'ndvi_2025.tif'
-QgsApplication.initQgis()
-processing.run("gdal:rastercalculator", {'INPUT_A':raster_2018_b5,'INPUT_B':raster_2018_b4,'INPUT_C':None,'INPUT_D':None,'INPUT_E':None,'INPUT_F':None,'FORMULA':'(A-B)/(A+B)','NO_DATA_VALUE':None,'RTYPE':5,'OPTIONS':'','EXTRA':'','OUTPUT':ndvi_2018_path})
-processing.run("gdal:rastercalculator", {'INPUT_A':raster_2025_b5,'INPUT_B':raster_2025_b4,'INPUT_C':None,'INPUT_D':None,'INPUT_E':None,'INPUT_F':None,'FORMULA':'(A-B)/(A+B)','NO_DATA_VALUE':None,'RTYPE':5,'OPTIONS':'','EXTRA':'','OUTPUT':ndvi_2025_path})
+with rasterio.open(b4_2018_path) as b4_2018:
+    with rasterio.open(b5_2018_path) as b5_2018:
+        red_2018 = b4_2018.read(1)
+        nir_2018 = b5_2018.read(1)
+        ndvi_2018 = calculate_ndvi(nir_2018, red_2018)
 
-# Зональная статистика
-ndvi_2018_layer = QgsRasterLayer(ndvi_2018_path, 'NDVI_2018')
-ndvi_2025_layer = QgsRasterLayer(ndvi_2025_path, 'NDVI_2025')
-zonal_stats_2018 = QgsZonalStatistics(vector_layer, ndvi_2018_layer, 'ndvi_2018_', 1)
-zonal_stats_2025 = QgsZonalStatistics(vector_layer, ndvi_2025_layer, 'ndvi_2025_', 1)
-zonal_stats_2018.calculateStatistics(None)
-zonal_stats_2025.calculateStatistics(None)
+with rasterio.open(b4_2025_path) as b4_2025:
+    with rasterio.open(b5_2025_path) as b5_2025:
+        red_2025 = b4_2025.read(1)
+        nir_2025 = b5_2025.read(1)
+        ndvi_2025 = calculate_ndvi(nir_2025, red_2025)
 
-# Вычисление разницы NDVI
-vector_layer.startEditing()
-vector_layer.addAttribute(QgsField('ndvi_diff', QVariant.Double))
-idx = vector_layer.fields().indexFromName('ndvi_diff')
-for feature in vector_layer.getFeatures():
-    ndvi_2018 = feature['ndvi_2018_mean']
-    ndvi_2025 = feature['ndvi_2025_mean']
-    diff = ndvi_2025 - ndvi_2018
-    vector_layer.changeAttributeValue(feature.id(), idx, diff)
-vector_layer.commitChanges()
+deforestation['mean_2018'] = deforestation.apply(lambda row: np.nanmean(ndvi_2018[row.geometry.bounds[1]:row.geometry.bounds[3], row.geometry.bounds[0]:row.geometry.bounds[2]]), axis=1)
+deforestation['mean_2025'] = deforestation.apply(lambda row: np.nanmean(ndvi_2025[row.geometry.bounds[1]:row.geometry.bounds[3], row.geometry.bounds[0]:row.geometry.bounds[2]]), axis=1)
 
-# Подсчёт количества полигонов с положительной разницей
-positive_count = sum(1 for feature in vector_layer.getFeatures() if feature['ndvi_diff'] &gt; 0)
-print(positive_count)</pre>
+increased_biomass_count = deforestation[(deforestation['mean_2025'] &gt; deforestation['mean_2018'])].shape[0]
+
+print(increased_biomass_count)</pre>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 16</div>
-                <div class="rating-button">👎 10</div>
+                <div class="rating-button">👍 15</div>
+                <div class="rating-button">👎 4</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -247,67 +237,45 @@ print(positive_count)</pre>
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #17a2b8;">ВК</div>
+        <div class="other-avatar" style="background: #28a745;">ИС</div>
         <div class="author-info">
             <div class="author-name">
-                Валентин Комаров
-                <span class="comment-badge">скептик</span>
-            </div>
-            <div class="meta">
-                <span>05.12.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        😂 Легко! Просто возьми калькулятор, высшую математику, пару справочников и реши. Чего тут сложного?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 8</div>
-        <div class="rating-button">👎 9</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #28a745;">ВП</div>
-        <div class="author-info">
-            <div class="author-name">
-                Василий Павлов
-                <span class="comment-badge">шутник</span>
-            </div>
-            <div class="meta">
-                <span>05.12.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        😏 Я бы помог, но мне лень. Извини.
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 20</div>
-        <div class="rating-button">👎 2</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">КК</div>
-        <div class="author-info">
-            <div class="author-name">
-                Кирилл Комаров
+                Игорь Соловьев
                 <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>05.12.2021</span>
+                <span>20.09.2015</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        😏 Я бы помог, но мне лень. Извини.
+        🌟 Дерзай! У тебя всё получится, главное не сдаваться.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 10</div>
-        <div class="rating-button">👎 3</div>
+        <div class="rating-button">👍 24</div>
+        <div class="rating-button">👎 1</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #dc3545;">ИБ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Игорь Богданов
+                <span class="comment-badge">тролль</span>
+            </div>
+            <div class="meta">
+                <span>20.09.2015</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        🤷‍♂️ Я вообще не шарю в этом. Разбирайся сам!
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 6</div>
+        <div class="rating-button">👎 13</div>
     </div>
 </div>
 

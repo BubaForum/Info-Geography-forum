@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тимофей Сергеев - вопрос</title>
+    <title>Андрей Степанов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -134,52 +134,150 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #758269</span>
+            <span>Вопрос #282828</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">ТС</div>
+                <div class="avatar">АС</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Тимофей Сергеев
-                        <span class="badge">Мудрец</span>
-                        <span class="reputation">3920</span>
+                        Андрей Степанов
+                        <span class="badge">Новичок</span>
+                        <span class="reputation">2827</span>
                     </div>
                     <div class="meta">
-                        <span>09.01.2021</span>
+                        <span>19.08.2019</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 201</span>
+                        <span>👁 125</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                одна скука в этой жизни! дайте что-нибудь интересное
+                Блестните знаниями по тому чему вы обучались в вузе
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">КГ</div>
+                <div class="answer-avatar">ПЕ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Константин Григорьев
-                        <span class="badge">Гуру</span>
-                        <span class="reputation">14532</span>
+                        Петр Егоров
+                        <span class="badge">Новичок</span>
+                        <span class="reputation">4081</span>
                     </div>
                     <div class="meta">
-                        <span>01.04.2021</span>
+                        <span>02.10.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>Не удалось получить ответ от сервера. Попробуйте еще раз.</div>
+                <div class='text-line'>### Решение в QGIS</div>
+<br>
+<div class='text-line'>1. **Откройте проект QGIS** и добавьте все предоставленные слои:</div>
+<div class='text-line'>   - `deforestation.shp`</div>
+<div class='text-line'>   - `LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif`</div>
+<div class='text-line'>   - `LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif`</div>
+<div class='text-line'>   - `LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif`</div>
+<div class='text-line'>   - `LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif`</div>
+<br>
+<div class='text-line'>2. **Рассчитайте NDVI для обоих снимков**:</div>
+<div class='text-line'>   - Откройте меню `Processing` &gt; `Toolbox`.</div>
+<div class='text-line'>   - Найдите и запустите инструмент `Raster Calculator`.</div>
+<div class='text-line'>   - Для снимка 2018 года:</div>
+<div class='text-line'>     - Введите формулу: `(LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip - LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip) / (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip + LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip)`</div>
+<div class='text-line'>     - Сохраните результат, например, как `NDVI_2018.tif`.</div>
+<div class='text-line'>   - Для снимка 2025 года:</div>
+<div class='text-line'>     - Введите формулу: `(LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip - LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip) / (LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip + LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip)`</div>
+<div class='text-line'>     - Сохраните результат, например, как `NDVI_2025.tif`.</div>
+<br>
+<div class='text-line'>3. **Вычислите разницу между NDVI 2025 и 2018**:</div>
+<div class='text-line'>   - Запустите снова `Raster Calculator`.</div>
+<div class='text-line'>   - Введите формулу: `NDVI_2025 - NDVI_2018`.</div>
+<div class='text-line'>   - Сохраните результат, например, как `NDVI_Difference.tif`.</div>
+<br>
+<div class='text-line'>4. **Анализ изменения NDVI внутри границ вырубок**:</div>
+<div class='text-line'>   - Откройте `Processing` &gt; `Toolbox`.</div>
+<div class='text-line'>   - Найдите и запустите инструмент `Zonal Statistics`.</div>
+<div class='text-line'>   - Выберите слой `deforestation.shp` как полигон для анализа.</div>
+<div class='text-line'>   - Выберите слой `NDVI_Difference.tif` как растровый слой.</div>
+<div class='text-line'>   - Запустите инструмент.</div>
+<br>
+<div class='text-line'>5. **Фильтрация полигонов с увеличением биомассы**:</div>
+<div class='text-line'>   - Откройте атрибутную таблицу слоя `deforestation.shp`.</div>
+<div class='text-line'>   - Найдите поле, которое содержит значения NDVI Difference (например, `mean`).</div>
+<div class='text-line'>   - Примените фильтр: `mean &gt; 0`.</div>
+<div class='text-line'>   - Подсчитайте количество полигонов, удовлетворяющих этому условию.</div>
+<br>
+<div class='text-line'>### Решение с помощью Python (QGIS Console)</div>
+<br>
+<pre class='code-content'>import processing
+from qgis.core import QgsProject
+
+# Добавляем слои
+project = QgsProject.instance()
+b4_2018 = project.mapLayersByName('LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip')[0]
+b5_2018 = project.mapLayersByName('LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip')[0]
+b4_2025 = project.mapLayersByName('LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip')[0]
+b5_2025 = project.mapLayersByName('LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip')[0]
+deforestation = project.mapLayersByName('deforestation')[0]
+
+# Рассчитываем NDVI для 2018 года
+ndvi_2018 = processing.run("qgis:rastercalculator", {
+    'EXPRESSION': f'({b5_2018.name()} - {b4_2018.name()}) / ({b5_2018.name()} + {b4_2018.name()})',
+    'LAYERS': [b4_2018, b5_2018],
+    'CELLSIZE': 0,
+    'EXTENT': None,
+    'PROJ Expression': '',
+    'OUTPUT': 'TEMPORARY_OUTPUT'
+})['OUTPUT']
+
+# Рассчитываем NDVI для 2025 года
+ndvi_2025 = processing.run("qgis:rastercalculator", {
+    'EXPRESSION': f'({b5_2025.name()} - {b4_2025.name()}) / ({b5_2025.name()} + {b4_2025.name()})',
+    'LAYERS': [b4_2025, b5_2025],
+    'CELLSIZE': 0,
+    'EXTENT': None,
+    'PROJ Expression': '',
+    'OUTPUT': 'TEMPORARY_OUTPUT'
+})['OUTPUT']
+
+# Рассчитываем разницу NDVI
+ndvi_diff = processing.run("qgis:rastercalculator", {
+    'EXPRESSION': f'{ndvi_2025} - {ndvi_2018}',
+    'LAYERS': [ndvi_2018, ndvi_2025],
+    'CELLSIZE': 0,
+    'EXTENT': None,
+    'PROJ Expression': '',
+    'OUTPUT': 'TEMPORARY_OUTPUT'
+})['OUTPUT']
+
+# Вычисляем статистику зон
+zonal_stats = processing.run("native:zonalstatisticsfb", {
+    'INPUT': deforestation,
+    'INPUT_RASTER': ndvi_diff,
+    'RASTER_BAND': 1,
+    'STATISTICS': 2,  # Mean
+    'OUTPUT': 'TEMPORARY_OUTPUT'
+})['OUTPUT']
+
+# Фильтруем полигон с увеличением биомассы
+deforestation.setSubsetString('"mean" &gt; 0')
+
+# Подсчитываем количество полигонов
+count = deforestation.featureCount()
+print(f'Количество вырубок, в границах которых произошло увеличение биомассы растительности: {count}')</pre>
+<br>
+<div class='text-line'>### Заключение</div>
+<br>
+<div class='text-line'>Теперь у тебя есть два способа решить задачу: через интерфейс QGIS и с помощью Python в консоли QGIS. Выбирай тот, который тебе больше нравится. Удачи!</div>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 15</div>
-                <div class="rating-button">👎 1</div>
+                <div class="rating-button">👍 82</div>
+                <div class="rating-button">👎 5</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -187,80 +285,36 @@
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">МА</div>
+        <div class="other-avatar" style="background: #28a745;">ВА</div>
         <div class="author-info">
             <div class="author-name">
-                Михаил Андреев
-                <span class="comment-badge">тролль</span>
+                Валерий Андреев
+                <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>01.04.2021</span>
+                <span>02.10.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        😂 Легко! Просто возьми калькулятор, высшую математику, пару справочников и реши. Чего тут сложного?
+        😏 Я бы помог, но мне лень. Извини.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 19</div>
-        <div class="rating-button">👎 5</div>
+        <div class="rating-button">👍 22</div>
+        <div class="rating-button">👎 9</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">ГБ</div>
+        <div class="other-avatar" style="background: #ffc107;">КД</div>
         <div class="author-info">
             <div class="author-name">
-                Глеб Богданов
-                <span class="comment-badge">скептик</span>
-            </div>
-            <div class="meta">
-                <span>01.04.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        🤷‍♂️ Я вообще не шарю в этом. Разбирайся сам!
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 5</div>
-        <div class="rating-button">👎 3</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #28a745;">ПС</div>
-        <div class="author-info">
-            <div class="author-name">
-                Павел Смирнов
+                Константин Денисов
                 <span class="comment-badge">злюка</span>
             </div>
             <div class="meta">
-                <span>01.04.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        🤨 А самому слабо разобраться?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 4</div>
-        <div class="rating-button">👎 1</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #dc3545;">ЛО</div>
-        <div class="author-info">
-            <div class="author-name">
-                Леонид Орлов
-                <span class="comment-badge">оптимист</span>
-            </div>
-            <div class="meta">
-                <span>01.04.2021</span>
+                <span>02.10.2021</span>
             </div>
         </div>
     </div>
@@ -268,14 +322,58 @@
         😂 Легко! Просто возьми калькулятор, высшую математику, пару справочников и реши. Чего тут сложного?
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 8</div>
+        <div class="rating-button">👎 2</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #dc3545;">ПС</div>
+        <div class="author-info">
+            <div class="author-name">
+                Павел Смирнов
+                <span class="comment-badge">шутник</span>
+            </div>
+            <div class="meta">
+                <span>02.10.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        😏 Я бы помог, но мне лень. Извини.
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
         <div class="rating-button">👍 17</div>
-        <div class="rating-button">👎 1</div>
+        <div class="rating-button">👎 12</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">КК</div>
+        <div class="author-info">
+            <div class="author-name">
+                Кирилл Киселев
+                <span class="comment-badge">скептик</span>
+            </div>
+            <div class="meta">
+                <span>02.10.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        😎 Я в своё время тоже с этого начинал. Ничего, выучишься!
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 2</div>
+        <div class="rating-button">👎 4</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2019
+            © Форум пользователей 2018
         </div>
     </div>
 

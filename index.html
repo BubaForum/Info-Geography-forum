@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Леонид Морозов - вопрос</title>
+    <title>Леонид Попов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #e62e6b; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -134,22 +134,22 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #470396</span>
+            <span>Вопрос #970872</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">ЛМ</div>
+                <div class="avatar">ЛП</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Леонид Морозов
+                        Леонид Попов
                         <span class="badge">Знаток</span>
-                        <span class="reputation">4041</span>
+                        <span class="reputation">4986</span>
                     </div>
                     <div class="meta">
-                        <span>16.04.2015</span>
+                        <span>15.10.2016</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 57</span>
+                        <span>👁 189</span>
                     </div>
                 </div>
             </div>
@@ -161,15 +161,15 @@
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">ЛС</div>
+                <div class="answer-avatar">РС</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Леонид Соловьев
-                        <span class="badge">Новичок</span>
-                        <span class="reputation">261</span>
+                        Роман Сергеев
+                        <span class="badge">Ученик</span>
+                        <span class="reputation">6978</span>
                     </div>
                     <div class="meta">
-                        <span>20.09.2015</span>
+                        <span>20.12.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
@@ -177,59 +177,89 @@
             <div class="answer-content">
                 <div class='text-line'>Решение на QGIS:</div>
 <br>
-<div class='text-line'>1. Открой QGIS и добавь векторный слой deforestation.shp</div>
-<div class='text-line'>2. Добавь растровые слои LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif, LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif, LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
-<div class='text-line'>3. Перейди в меню Raster -&gt; Analysis -&gt; Raster Calculator</div>
-<div class='text-line'>4. Создай NDVI для 2018 года: (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip - LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip) / (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip + LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip)</div>
-<div class='text-line'>5. Создай NDVI для 2025 года: (LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip - LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip) / (LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip + LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip)</div>
-<div class='text-line'>6. Сохрани результаты NDVI как новые растровые слои</div>
-<div class='text-line'>7. Перейди в меню Vector -&gt; Analysis Tools -&gt; Zonal Statistics</div>
-<div class='text-line'>8. Выбери слой deforestation.shp и растровый слой NDVI 2018 года</div>
-<div class='text-line'>9. Повтори шаг 8 для NDVI 2025 года</div>
-<div class='text-line'>10. Добавь поля с результатами зональной статистики в атрибутивную таблицу deforestation.shp</div>
-<div class='text-line'>11. Выполни запрос в атрибутивной таблице deforestation.shp: "mean_2025" &gt; "mean_2018"</div>
-<div class='text-line'>12. Посчитай количество строк, удовлетворяющих условию</div>
+<div class='text-line'>1 Открой QGIS</div>
+<div class='text-line'>2 Загрузи слои deforestation.shp LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
+<div class='text-line'>3 Перейди в меню Raster -&gt; Raster Calculator</div>
+<div class='text-line'>4 В поле Raster calculator expression введи (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip@1 - LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip@1) / (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip@1 + LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip@1)</div>
+<div class='text-line'>5 Нажми OK</div>
+<div class='text-line'>6 Повтори шаги 3-5 для LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif и LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
+<div class='text-line'>7 Добавь оба полученных NDVI растра в проект</div>
+<div class='text-line'>8 Перейди в меню Processing -&gt; Toolbox</div>
+<div class='text-line'>9 Найди и запусти функцию Zonal Statistics</div>
+<div class='text-line'>10 Выбери первый NDVI растр, затем слой deforestation.shp и укажи имя поля для сохранения статистики</div>
+<div class='text-line'>11 Повтори шаги 9-10 для второго NDVI растра</div>
+<div class='text-line'>12 Открой атрибутную таблицу слоя deforestation.shp</div>
+<div class='text-line'>13 Добавь новое поле для расчета разницы NDVI между 2018 и 2025 годами</div>
+<div class='text-line'>14 Используй поле калькулятора для создания выражения, которое вычитает значение NDVI 2018 из NDVI 2025</div>
+<div class='text-line'>15 Фильтруй атрибутную таблицу по положительному значению разницы NDVI</div>
+<div class='text-line'>16 Подсчитай количество строк в фильтрованной таблице</div>
 <br>
-<div class='text-line'>Решение кодом:</div>
+<div class='text-line'>Решение на Python:</div>
 <br>
-<pre class='code-content'>import rasterio
-import geopandas as gpd
-import numpy as np
+<pre class='code-content'>import os
+from osgeo import gdal, ogr
 
-def calculate_ndvi(band_nir, band_red):
-    ndvi = (band_nir - band_red) / (band_nir + band_red)
+def calculate_ndvi(red_band_path, nir_band_path):
+    red = gdal.Open(red_band_path).ReadAsArray().astype(float)
+    nir = gdal.Open(nir_band_path).ReadAsArray().astype(float)
+    ndvi = (nir - red) / (nir + red)
     return ndvi
 
-shp_path = 'deforestation.shp'
-b4_2018_path = 'LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif'
-b5_2018_path = 'LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif'
-b4_2025_path = 'LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif'
-b5_2025_path = 'LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif'
+def get_zonal_stats(vector_path, raster_data):
+    driver = ogr.GetDriverByName('ESRI Shapefile')
+    dataSource = driver.Open(vector_path, 1)
+    layer = dataSource.GetLayer()
+    for feature in layer:
+        geom = feature.GetGeometryRef()
+        minx, maxx, miny, maxy = geom.GetEnvelope()
+        x_res = (maxx - minx) / raster_data.shape[1]
+        y_res = (maxy - miny) / raster_data.shape[0]
+        transform = (minx, x_res, 0, maxy, 0, -y_res)
+        mem_driver = gdal.GetDriverByName('MEM')
+        mem_raster = mem_driver.Create('', raster_data.shape[1], raster_data.shape[0], 1, gdal.GDT_Float32)
+        mem_raster.SetGeoTransform(transform)
+        mem_raster.GetRasterBand(1).WriteArray(raster_data)
+        cutlineDSName = '/vsimem/polygon.shp'
+        gdal.VectorTranslate(cutlineDSName, vector_path, format='Memory', layerCreationOptions=['GEOMETRY_NAME=geom'])
+        gdal.Warp('/vsimem/clipped.tif', mem_raster, cutlineDS=cutlineDSName, cropToCutline=True)
+        clipped_raster = gdal.Open('/vsimem/clipped.tif').ReadAsArray()
+        mean_value = clipped_raster[clipped_raster != 0].mean()
+        feature.SetField('ndvi', mean_value)
+        layer.SetFeature(feature)
+    dataSource.Destroy()
 
-deforestation = gpd.read_file(shp_path)
+vector_path = 'deforestation.shp'
+red_band_2018 = 'LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif'
+nir_band_2018 = 'LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif'
+red_band_2025 = 'LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif'
+nir_band_2025 = 'LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif'
 
-with rasterio.open(b4_2018_path) as b4_2018:
-    with rasterio.open(b5_2018_path) as b5_2018:
-        red_2018 = b4_2018.read(1)
-        nir_2018 = b5_2018.read(1)
-        ndvi_2018 = calculate_ndvi(nir_2018, red_2018)
+ndvi_2018 = calculate_ndvi(red_band_2018, nir_band_2018)
+ndvi_2025 = calculate_ndvi(red_band_2025, nir_band_2025)
 
-with rasterio.open(b4_2025_path) as b4_2025:
-    with rasterio.open(b5_2025_path) as b5_2025:
-        red_2025 = b4_2025.read(1)
-        nir_2025 = b5_2025.read(1)
-        ndvi_2025 = calculate_ndvi(nir_2025, red_2025)
+get_zonal_stats(vector_path, ndvi_2018)
+get_zonal_stats(vector_path, ndvi_2025)
 
-deforestation['mean_2018'] = deforestation.apply(lambda row: np.nanmean(ndvi_2018[row.geometry.bounds[1]:row.geometry.bounds[3], row.geometry.bounds[0]:row.geometry.bounds[2]]), axis=1)
-deforestation['mean_2025'] = deforestation.apply(lambda row: np.nanmean(ndvi_2025[row.geometry.bounds[1]:row.geometry.bounds[3], row.geometry.bounds[0]:row.geometry.bounds[2]]), axis=1)
+driver = ogr.GetDriverByName('ESRI Shapefile')
+dataSource = driver.Open(vector_path, 1)
+layer = dataSource.GetLayer()
+layer_def = layer.GetLayerDefn()
+field_index = layer_def.GetFieldIndex('ndvi')
 
-increased_biomass_count = deforestation[(deforestation['mean_2025'] &gt; deforestation['mean_2018'])].shape[0]
+increased_count = 0
+for feature in layer:
+    ndvi_2018 = feature.GetField(field_index)
+    feature.SetField('ndvi', 0)
+    layer.SetFeature(feature)
+    ndvi_2025 = feature.GetField(field_index)
+    if ndvi_2025 &gt; ndvi_2018:
+        increased_count += 1
 
-print(increased_biomass_count)</pre>
+print(increased_count)</pre>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 15</div>
-                <div class="rating-button">👎 4</div>
+                <div class="rating-button">👍 58</div>
+                <div class="rating-button">👎 14</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -237,51 +267,51 @@ print(increased_biomass_count)</pre>
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #28a745;">ИС</div>
+        <div class="other-avatar" style="background: #fd7e14;">ВА</div>
         <div class="author-info">
             <div class="author-name">
-                Игорь Соловьев
-                <span class="comment-badge">добряк</span>
+                Владимир Андреев
+                <span class="comment-badge">местный</span>
             </div>
             <div class="meta">
-                <span>20.09.2015</span>
+                <span>20.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        🌟 Дерзай! У тебя всё получится, главное не сдаваться.
+        😎 Я в своё время тоже с этого начинал. Ничего, выучишься!
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 24</div>
-        <div class="rating-button">👎 1</div>
+        <div class="rating-button">👍 16</div>
+        <div class="rating-button">👎 11</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #dc3545;">ИБ</div>
+        <div class="other-avatar" style="background: #dc3545;">АС</div>
         <div class="author-info">
             <div class="author-name">
-                Игорь Богданов
-                <span class="comment-badge">тролль</span>
+                Анатолий Смирнов
+                <span class="comment-badge">злюка</span>
             </div>
             <div class="meta">
-                <span>20.09.2015</span>
+                <span>20.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        🤷‍♂️ Я вообще не шарю в этом. Разбирайся сам!
+        😤 Да что ж вы такие беспомощные! Гугл в помощь, там всё есть.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 6</div>
-        <div class="rating-button">👎 13</div>
+        <div class="rating-button">👍 8</div>
+        <div class="rating-button">👎 12</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2020
+            © Форум пользователей 2021
         </div>
     </div>
 

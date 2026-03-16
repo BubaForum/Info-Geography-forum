@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Леонид Попов - вопрос</title>
+    <title>Тимофей Морозов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #43cc4c; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,132 +134,70 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #970872</span>
+            <span>Вопрос #324813</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">ЛП</div>
+                <div class="avatar">ТМ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Леонид Попов
-                        <span class="badge">Знаток</span>
-                        <span class="reputation">4986</span>
+                        Тимофей Морозов
+                        <span class="badge">Гуру</span>
+                        <span class="reputation">4626</span>
                     </div>
                     <div class="meta">
-                        <span>15.10.2016</span>
+                        <span>22.03.2016</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 189</span>
+                        <span>👁 83</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                молодежь расскажите что-нибудь из гео-информатики, просто мой внук её тоже занимается, хочется быть на 1 волне с ним
+                товарищи географы, блестните межпредметными знаниями
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">РС</div>
+                <div class="answer-avatar">ФЗ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Роман Сергеев
-                        <span class="badge">Ученик</span>
-                        <span class="reputation">6978</span>
+                        Федор Зайцев
+                        <span class="badge">Знаток</span>
+                        <span class="reputation">9188</span>
                     </div>
                     <div class="meta">
-                        <span>20.12.2021</span>
+                        <span>10.07.2017</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>Решение на QGIS:</div>
+                <div class='text-line'>Вот пример кода на Tkinter:</div>
 <br>
-<div class='text-line'>1 Открой QGIS</div>
-<div class='text-line'>2 Загрузи слои deforestation.shp LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
-<div class='text-line'>3 Перейди в меню Raster -&gt; Raster Calculator</div>
-<div class='text-line'>4 В поле Raster calculator expression введи (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip@1 - LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip@1) / (LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip@1 + LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip@1)</div>
-<div class='text-line'>5 Нажми OK</div>
-<div class='text-line'>6 Повтори шаги 3-5 для LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif и LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif</div>
-<div class='text-line'>7 Добавь оба полученных NDVI растра в проект</div>
-<div class='text-line'>8 Перейди в меню Processing -&gt; Toolbox</div>
-<div class='text-line'>9 Найди и запусти функцию Zonal Statistics</div>
-<div class='text-line'>10 Выбери первый NDVI растр, затем слой deforestation.shp и укажи имя поля для сохранения статистики</div>
-<div class='text-line'>11 Повтори шаги 9-10 для второго NDVI растра</div>
-<div class='text-line'>12 Открой атрибутную таблицу слоя deforestation.shp</div>
-<div class='text-line'>13 Добавь новое поле для расчета разницы NDVI между 2018 и 2025 годами</div>
-<div class='text-line'>14 Используй поле калькулятора для создания выражения, которое вычитает значение NDVI 2018 из NDVI 2025</div>
-<div class='text-line'>15 Фильтруй атрибутную таблицу по положительному значению разницы NDVI</div>
-<div class='text-line'>16 Подсчитай количество строк в фильтрованной таблице</div>
+<pre class='code-content'>import tkinter as tk
+
+root = tk.Tk()
+root.title("Пример окна")
+
+label = tk.Label(root, text="Привет, мир!")
+label.pack()
+
+button = tk.Button(root, text="Нажми меня", command=lambda: print("Кнопка нажата"))
+button.pack()
+
+entry = tk.Entry(root)
+entry.pack()
+
+root.mainloop()</pre>
 <br>
-<div class='text-line'>Решение на Python:</div>
-<br>
-<pre class='code-content'>import os
-from osgeo import gdal, ogr
-
-def calculate_ndvi(red_band_path, nir_band_path):
-    red = gdal.Open(red_band_path).ReadAsArray().astype(float)
-    nir = gdal.Open(nir_band_path).ReadAsArray().astype(float)
-    ndvi = (nir - red) / (nir + red)
-    return ndvi
-
-def get_zonal_stats(vector_path, raster_data):
-    driver = ogr.GetDriverByName('ESRI Shapefile')
-    dataSource = driver.Open(vector_path, 1)
-    layer = dataSource.GetLayer()
-    for feature in layer:
-        geom = feature.GetGeometryRef()
-        minx, maxx, miny, maxy = geom.GetEnvelope()
-        x_res = (maxx - minx) / raster_data.shape[1]
-        y_res = (maxy - miny) / raster_data.shape[0]
-        transform = (minx, x_res, 0, maxy, 0, -y_res)
-        mem_driver = gdal.GetDriverByName('MEM')
-        mem_raster = mem_driver.Create('', raster_data.shape[1], raster_data.shape[0], 1, gdal.GDT_Float32)
-        mem_raster.SetGeoTransform(transform)
-        mem_raster.GetRasterBand(1).WriteArray(raster_data)
-        cutlineDSName = '/vsimem/polygon.shp'
-        gdal.VectorTranslate(cutlineDSName, vector_path, format='Memory', layerCreationOptions=['GEOMETRY_NAME=geom'])
-        gdal.Warp('/vsimem/clipped.tif', mem_raster, cutlineDS=cutlineDSName, cropToCutline=True)
-        clipped_raster = gdal.Open('/vsimem/clipped.tif').ReadAsArray()
-        mean_value = clipped_raster[clipped_raster != 0].mean()
-        feature.SetField('ndvi', mean_value)
-        layer.SetFeature(feature)
-    dataSource.Destroy()
-
-vector_path = 'deforestation.shp'
-red_band_2018 = 'LC08_L1TP_182015_20180710_20200831_02_T1_B4_clip.tif'
-nir_band_2018 = 'LC08_L1TP_182015_20180710_20200831_02_T1_B5_clip.tif'
-red_band_2025 = 'LC08_L1TP_182015_20250713_20250713_02_RT_B4_clip.tif'
-nir_band_2025 = 'LC08_L1TP_182015_20250713_20250713_02_RT_B5_clip.tif'
-
-ndvi_2018 = calculate_ndvi(red_band_2018, nir_band_2018)
-ndvi_2025 = calculate_ndvi(red_band_2025, nir_band_2025)
-
-get_zonal_stats(vector_path, ndvi_2018)
-get_zonal_stats(vector_path, ndvi_2025)
-
-driver = ogr.GetDriverByName('ESRI Shapefile')
-dataSource = driver.Open(vector_path, 1)
-layer = dataSource.GetLayer()
-layer_def = layer.GetLayerDefn()
-field_index = layer_def.GetFieldIndex('ndvi')
-
-increased_count = 0
-for feature in layer:
-    ndvi_2018 = feature.GetField(field_index)
-    feature.SetField('ndvi', 0)
-    layer.SetFeature(feature)
-    ndvi_2025 = feature.GetField(field_index)
-    if ndvi_2025 &gt; ndvi_2018:
-        increased_count += 1
-
-print(increased_count)</pre>
+<div class='text-line'>Этот код создает простое окно с надписью, кнопкой и полем ввода. При нажатии на кнопку в консоль выводится сообщение.</div>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 58</div>
-                <div class="rating-button">👎 14</div>
+                <div class="rating-button">👍 90</div>
+                <div class="rating-button">👎 11</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -267,51 +205,117 @@ print(increased_count)</pre>
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">ВА</div>
+        <div class="other-avatar" style="background: #28a745;">БП</div>
         <div class="author-info">
             <div class="author-name">
-                Владимир Андреев
-                <span class="comment-badge">местный</span>
+                Борис Павлов
+                <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>20.12.2021</span>
+                <span>10.07.2017</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        😎 Я в своё время тоже с этого начинал. Ничего, выучишься!
+        🤔 Понятия не имею, даже не знаю что сказать. Может кто умнее подскажет.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 16</div>
+        <div class="rating-button">👍 17</div>
+        <div class="rating-button">👎 8</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">БГ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Борис Голубев
+                <span class="comment-badge">оптимист</span>
+            </div>
+            <div class="meta">
+                <span>10.07.2017</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        🤨 А самому слабо разобраться?
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 15</div>
+        <div class="rating-button">👎 0</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">ТМ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Тарас Морозов
+                <span class="comment-badge">прохожий</span>
+            </div>
+            <div class="meta">
+                <span>10.07.2017</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        🤔 Понятия не имею, даже не знаю что сказать. Может кто умнее подскажет.
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 2</div>
         <div class="rating-button">👎 11</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #dc3545;">АС</div>
+        <div class="other-avatar" style="background: #6f42c1;">КЕ</div>
         <div class="author-info">
             <div class="author-name">
-                Анатолий Смирнов
-                <span class="comment-badge">злюка</span>
+                Кирилл Егоров
+                <span class="comment-badge">скептик</span>
             </div>
             <div class="meta">
-                <span>20.12.2021</span>
+                <span>10.07.2017</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        😤 Да что ж вы такие беспомощные! Гугл в помощь, там всё есть.
+        😏 Я бы помог, но мне лень. Извини.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 8</div>
-        <div class="rating-button">👎 12</div>
+        <div class="rating-button">👍 12</div>
+        <div class="rating-button">👎 7</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">КП</div>
+        <div class="author-info">
+            <div class="author-name">
+                Кирилл Павлов
+                <span class="comment-badge">оптимист</span>
+            </div>
+            <div class="meta">
+                <span>10.07.2017</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        🤨 А самому слабо разобраться?
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 9</div>
+        <div class="rating-button">👎 4</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2021
+            © Форум пользователей 2015
         </div>
     </div>
 

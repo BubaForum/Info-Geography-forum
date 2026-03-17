@@ -1,318 +1,49 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
+    <title>Форум закрыт</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Артем Федоров - вопрос</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
-        .header { background: white; border-bottom: 1px solid #e0e2e8; padding: 12px 20px; margin-bottom: 24px; box-shadow: 0 2px 6px rgba(0,16,61,0.04); border-radius: 0 0 12px 12px; max-width: 1000px; margin-left: auto; margin-right: auto; width: 100%; }
-        .header-content { display: flex; align-items: center; gap: 16px; }
-        .logo { font-weight: 600; font-size: 22px; color: #0070f0; display: flex; align-items: center; gap: 8px; }
-        .logo svg { width: 28px; height: 28px; }
-        .search-bar { flex: 1; background: #f0f1f3; border-radius: 8px; padding: 8px 16px; color: #87898f; font-size: 15px; display: flex; align-items: center; gap: 8px; }
-        .search-bar svg { width: 18px; height: 18px; fill: #87898f; }
-        .container { max-width: 1000px; margin: 0 auto; width: 100%; }
-        .breadcrumbs { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 14px; color: #797a80; }
-        .breadcrumbs a { color: #0070f0; text-decoration: none; }
-        .breadcrumbs a:hover { text-decoration: underline; }
-        .breadcrumbs .sep { color: #aaadb3; }
-        .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
-        .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #ff9e00; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
-        .author-info { flex: 1; }
-        .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
-        .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
-        .space-badge { background: #f0f1f3; border-radius: 4px; padding: 2px 8px; font-size: 12px; color: #2c2d2e; }
-        .question-title { padding: 16px 24px 0 24px; font-size: 22px; font-weight: 600; color: #2c2d2e; }
-        .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
-        .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
-        .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #8c64ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
-        .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
-        
-        /* Стили для блоков кода */
-        .code-block {
-            position: relative;
-            margin: 16px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #1e1e1e;
-        }
-        .code-header {
-            background: #2d2d2d;
-            padding: 8px 16px;
-            display: flex;
-            justify-content: flex-end;
-            border-bottom: 1px solid #404040;
-        }
-        .copy-btn {
-            background: #3d3d3d;
-            color: #e0e0e0;
-            border: 1px solid #555;
-            border-radius: 4px;
-            padding: 4px 12px;
-            font-size: 13px;
-            cursor: pointer;
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
             display: flex;
             align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-        .copy-btn:hover {
-            background: #4d4d4d;
+            justify-content: center;
             color: white;
-            border-color: #777;
+            text-align: center;
         }
-        .copy-btn.copied {
-            background: #2e7d32;
-            color: white;
-            border-color: #1b5e20;
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        .code-content {
-            padding: 16px;
-            margin: 0;
-            color: #f8f8f2;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-            white-space: pre;
-            overflow-x: auto;
-            background: #1e1e1e;
+        h1 { font-size: 48px; margin: 0; }
+        p { font-size: 18px; opacity: 0.9; }
+        .premium { 
+            background: gold; 
+            color: #333; 
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
         }
-        .text-line { margin: 4px 0; display: block; }
-        
-        .other-answer-card { 
-            background: white; 
-            border-radius: 12px; 
-            box-shadow: 0 1px 12px 0 rgba(0,0,0,0.05), 0 0 1px 0 rgba(0,0,0,0.05); 
-            margin-bottom: 16px; 
-            margin-left: 32px; 
-            overflow: hidden; 
-            border-left: 2px solid #e0e2e8; 
-        }
-        .other-answer-header { padding: 16px 24px 0 24px; display: flex; align-items: center; gap: 10px; }
-        .other-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 14px; flex-shrink: 0; }
-        .other-answer-content { padding: 8px 24px 16px 58px; font-size: 15px; color: #2c2d2e; line-height: 1.5; background: white; font-family: 'Segoe UI', Arial, sans-serif; }
-        .footer { margin-top: 32px; text-align: center; color: #87898f; font-size: 13px; padding: 20px; border-top: 1px solid #e0e2e8; }
-        .footer a { color: #0070f0; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .badge { background: #f0f1f3; color: #2c2d2e; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500; margin-left: 8px; }
-        .rating { display: flex; align-items: center; gap: 16px; padding: 0 24px 20px 24px; }
-        .rating-button { display: flex; align-items: center; gap: 4px; color: #797a80; font-size: 14px; cursor: pointer; }
-        .rating-button:hover { color: #0070f0; }
-        .reputation { font-size: 12px; color: #aaadb3; margin-left: 8px; }
-        .notice { background: #fff9e6; border: 1px solid #ffd966; border-radius: 8px; padding: 12px 24px; margin: 0 24px 20px 24px; font-size: 14px; color: #856404; }
-        .comment-badge { background: #e9ecef; color: #495057; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-left: 8px; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header-content">
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                </svg>
-                Ответы
-            </div>
-            <div class="search-bar">
-                <svg viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                </svg>
-                <span>Поиск по ответам...</span>
-            </div>
-        </div>
+    <div class="card">
+     
+        <p>Форум временно закрыт на тех работы</p>
+        <p>Приносим извинения за неудобства.</p>
+        <div class="premium">⭐ Спасибо за понимание</div>
     </div>
-
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="#">Главная</a>
-            <span class="sep">•</span>
-            <a href="#">Пространства</a>
-            <span class="sep">•</span>
-            <a href="#">Вопросы без ответа</a>
-            <span class="sep">•</span>
-            <span>Вопрос #652609</span>
-        </div>
-
-        <div class="question-card">
-            <div class="question-header">
-                <div class="avatar">АФ</div>
-                <div class="author-info">
-                    <div class="author-name">
-                        Артем Федоров
-                        <span class="badge">Новичок</span>
-                        <span class="reputation">2960</span>
-                    </div>
-                    <div class="meta">
-                        <span>07.10.2019</span>
-                        <span class="space-badge">Геоинформатика</span>
-                        <span>👁 130</span>
-                    </div>
-                </div>
-            </div>
-            <div class="question-title">
-                товарищи географы, блестните межпредметными знаниями
-            </div>
-            <div class="question-body"></div>
-        </div>
-
-        <div class="answer-card">
-            <div class="answer-header">
-                <div class="answer-avatar">ДС</div>
-                <div class="author-info">
-                    <div class="author-name">
-                        Даниил Сергеев
-                        <span class="badge">Ученик</span>
-                        <span class="reputation">4383</span>
-                    </div>
-                    <div class="meta">
-                        <span>10.02.2021</span>
-                        <span>🏆 лучший ответ</span>
-                    </div>
-                </div>
-            </div>
-            <div class="answer-content">
-                <div class='text-line'>Решение на QGIS:</div>
-<br>
-<div class='text-line'>1. Открой QGIS</div>
-<div class='text-line'>2. Перейди в меню Layer &gt; Create Layer &gt; New Shapefile Layer</div>
-<div class='text-line'>3. Выбери тип геометрии: Point Line или Polygon</div>
-<div class='text-line'>4. Добавь нужные атрибуты</div>
-<div class='text-line'>5. Укажи систему координат</div>
-<div class='text-line'>6. Нажми OK</div>
-<div class='text-line'>7. В открывшемся окне выбери место сохранения файла и имя</div>
-<div class='text-line'>8. Нажми Save</div>
-<br>
-<div class='text-line'>Код на Python для создания векторного файла:</div>
-<br>
-<pre class='code-content'>from osgeo import ogr
-
-driver = ogr.GetDriverByName('ESRI Shapefile')
-data_source = driver.CreateDataSource('output.shp')
-layer = data_source.CreateLayer('output', geom_type=ogr.wkbPolygon)
-
-field_name = ogr.FieldDefn('name', ogr.OFTString)
-field_name.SetWidth(24)
-layer.CreateField(field_name)
-
-feature = ogr.Feature(layer.GetLayerDefn())
-wkt = 'POLYGON ((0 0, 10 0, 10 10, 0 10, 0 0))'
-polygon = ogr.CreateGeometryFromWkt(wkt)
-feature.SetGeometry(polygon)
-feature.SetField('name', 'First polygon')
-layer.CreateFeature(feature)
-
-feature = None
-data_source = None</pre>
-            </div>
-            <div class="rating">
-                <div class="rating-button">👍 83</div>
-                <div class="rating-button">👎 3</div>
-                <div class="rating-button">💬 Ответить</div>
-                <div class="rating-button">🔗 Поделиться</div>
-            </div>
-        </div>
-
-        <div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">АМ</div>
-        <div class="author-info">
-            <div class="author-name">
-                Алексей Макаров
-                <span class="comment-badge">прохожий</span>
-            </div>
-            <div class="meta">
-                <span>13.02.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        это понятно где можно бесплатно посмотреть сериалы?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 9</div>
-        <div class="rating-button">👎 4</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">СБ</div>
-        <div class="author-info">
-            <div class="author-name">
-                Степан Белов
-                <span class="comment-badge">оптимист</span>
-            </div>
-            <div class="meta">
-                <span>14.02.2021</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        Я бы помог, но мне лень. Извини.
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 19</div>
-        <div class="rating-button">👎 14</div>
-    </div>
-</div>
-
-        <div class="footer">
-            <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2019
-        </div>
-    </div>
-
-    <script>
-        function copyCode(btn, code) {
-            const textarea = document.createElement('textarea');
-            textarea.innerHTML = code;
-            const cleanCode = textarea.value;
-            
-            navigator.clipboard.writeText(cleanCode).then(() => {
-                btn.classList.add('copied');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '✓ Скопировано!';
-                
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.innerHTML = originalText;
-                }, 2000);
-            }).catch(() => {
-                btn.innerHTML = '❌ Ошибка';
-                setTimeout(() => {
-                    btn.innerHTML = '📋 Копировать';
-                }, 2000);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const codeBlocks = document.querySelectorAll('.code-content');
-            
-            codeBlocks.forEach((block) => {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'code-block';
-                
-                const header = document.createElement('div');
-                header.className = 'code-header';
-                
-                const btn = document.createElement('button');
-                btn.className = 'copy-btn';
-                btn.innerHTML = '📋 Копировать';
-                
-                const codeContent = block.textContent;
-                btn.onclick = function() { copyCode(this, codeContent); };
-                
-                header.appendChild(btn);
-                
-                block.parentNode.insertBefore(wrapper, block);
-                wrapper.appendChild(header);
-                wrapper.appendChild(block);
-            });
-        });
-    </script>
 </body>
 </html>
+        

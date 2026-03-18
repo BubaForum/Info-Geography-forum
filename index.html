@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Алексей Соколов - вопрос</title>
+    <title>Дмитрий Новиков - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #ff9e00; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #43cc4c; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,74 +134,67 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #466686</span>
+            <span>Вопрос #548888</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">АС</div>
+                <div class="avatar">ДН</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Алексей Соколов
+                        Дмитрий Новиков
                         <span class="badge">Ученик</span>
-                        <span class="reputation">4602</span>
+                        <span class="reputation">1249</span>
                     </div>
                     <div class="meta">
-                        <span>10.02.2021</span>
+                        <span>01.03.2017</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 44</span>
+                        <span>👁 143</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                Блестните знаниями по тому чему вы обучались в вузе
+                товарищи географы, блестните межпредметными знаниями
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">КЗ</div>
+                <div class="answer-avatar">ТК</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Кирилл Зайцев
-                        <span class="badge">Эксперт</span>
-                        <span class="reputation">5125</span>
+                        Тарас Козлов
+                        <span class="badge">Гуру</span>
+                        <span class="reputation">4989</span>
                     </div>
                     <div class="meta">
-                        <span>20.12.2021</span>
+                        <span>06.12.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>Решение на Python:</div>
+                <div class='text-line'>Решение на QGIS:</div>
+<div class='text-line'>1. Открой QGIS</div>
+<div class='text-line'>2. Добавь слой GPKG через меню Layer -&gt; Add Layer -&gt; Add Vector Layer и выбери свой файл</div>
+<div class='text-line'>3. Выбери слой в таблице содержимого</div>
+<div class='text-line'>4. Открой атрибутивную таблицу слоя двойным кликом или через правую кнопку мыши</div>
+<div class='text-line'>5. Выбери нужные данные</div>
+<div class='text-line'>6. Скопируй их (Ctrl+C)</div>
 <br>
-<pre class='code-content'>from osgeo import gdal
-import os
+<div class='text-line'>Решение кодом:</div>
+<pre class='code-content'>import geopandas as gpd
 
-def geotag_jpg_with_kml(jpg_path, kml_path, output_path):
-    ds = gdal.OpenEx(kml_path, gdal.OF_VECTOR)
-    layer = ds.GetLayer()
-    feature = next(layer)
-    geom = feature.GetGeometryRef()
-    lon lat = geom.GetX() geom.GetY()
+# Чтение данных
+gdf = gpd.read_file('path_to_your_file.gpkg', layer='layer_name')
 
-    cmd = f'exiftool -GPSLongitude={lon} -GPSLatitude={lat} {jpg_path} -o {output_path}'
-    os.system(cmd)</pre>
-<br>
-<div class='text-line'>Решение на QGIS:</div>
-<br>
-<div class='text-line'>1. Открой QGIS и загрузи KML файл через меню Layer -&gt; Add Layer -&gt; Add Vector Layer</div>
-<div class='text-line'>2. Выбери слой с точками из KML файла</div>
-<div class='text-line'>3. Открой таблицу атрибутов слоя</div>
-<div class='text-line'>4. Скопируй координаты точки которая соответствует твоему JPG</div>
-<div class='text-line'>5. Вставь координаты в EXIF данные JPG файла с помощью программы типа ExifTool или аналогичной</div>
-<div class='text-line'>6. Сохрани измененный JPG файл</div>
+# Сохранение данных в CSV
+gdf.to_csv('output.csv', index=False)</pre>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 61</div>
-                <div class="rating-button">👎 13</div>
+                <div class="rating-button">👍 25</div>
+                <div class="rating-button">👎 3</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -209,51 +202,51 @@ def geotag_jpg_with_kml(jpg_path, kml_path, output_path):
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">ВС</div>
+        <div class="other-avatar" style="background: #6f42c1;">ВВ</div>
         <div class="author-info">
             <div class="author-name">
-                Валентин Соловьев
+                Валерий Виноградов
                 <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>22.12.2021</span>
+                <span>06.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        Я в своё время тоже с этого начинал. Ничего, выучишься!
+         Дерзай! У тебя всё получится, главное не сдаваться.
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 10</div>
-        <div class="rating-button">👎 3</div>
+        <div class="rating-button">👍 4</div>
+        <div class="rating-button">👎 7</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #28a745;">ГС</div>
+        <div class="other-avatar" style="background: #6f42c1;">КК</div>
         <div class="author-info">
             <div class="author-name">
-                Григорий Семенов
-                <span class="comment-badge">оптимист</span>
+                Константин Киселев
+                <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>23.12.2021</span>
+                <span>07.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        дайте монеток
+        это понятно где можно бесплатно посмотреть сериалы?
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 12</div>
-        <div class="rating-button">👎 13</div>
+        <div class="rating-button">👍 2</div>
+        <div class="rating-button">👎 11</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2017
+            © Форум пользователей 2018
         </div>
     </div>
 

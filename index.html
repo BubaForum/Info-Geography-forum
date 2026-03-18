@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семен Борисов - вопрос</title>
+    <title>Вячеслав Петров - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #22ceec; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -134,119 +134,78 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #496517</span>
+            <span>Вопрос #687839</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">СБ</div>
+                <div class="avatar">ВП</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Семен Борисов
-                        <span class="badge">Новичок</span>
-                        <span class="reputation">4677</span>
+                        Вячеслав Петров
+                        <span class="badge">Эксперт</span>
+                        <span class="reputation">3739</span>
                     </div>
                     <div class="meta">
-                        <span>14.04.2021</span>
+                        <span>03.08.2017</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 55</span>
+                        <span>👁 74</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                товарищи географы, блестните межпредметными знаниями
+                Дайте интересный проект по геоинформатике или что-то около неё
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">СА</div>
+                <div class="answer-avatar">МЛ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Семен Алексеев
-                        <span class="badge">Эксперт</span>
-                        <span class="reputation">11055</span>
+                        Михаил Лебедев
+                        <span class="badge">Гуру</span>
+                        <span class="reputation">5467</span>
                     </div>
                     <div class="meta">
-                        <span>16.05.2021</span>
+                        <span>25.06.2019</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>Решение на QGIS:</div>
+                <div class='text-line'>Для мониторинга разлива мазута в Азовском море в декабре 2024 года лучше всего подойдут спутники с синтетической апертурной радарной (SAR) системой, так как они могут работать в любых погодных условиях и не зависят от освещения. Оптимальными вариантами будут спутники Sentinel-1 и Radarsat-2.</div>
 <br>
-<div class='text-line'>1 Открой QGIS</div>
-<div class='text-line'>2 Создай новую проект</div>
-<div class='text-line'>3 Перетащи файл JPEG в QGIS</div>
-<div class='text-line'>4 Перейди во вкладку Layer Properties</div>
-<div class='text-line'>5 Перейди на вкладку Source и выбери кнопку Set Layer CRS</div>
-<div class='text-line'>6 Выбери CRS EPSG:3857</div>
-<div class='text-line'>7 Перейди на вкладку Metadata и открой файл KML в разделе Extent</div>
-<div class='text-line'>8 Введи координаты из KML в поля X Min, Y Min, X Max, Y Max</div>
-<div class='text-line'>9 Сохрани слой как GeoTIFF, укажи имя файла в формате nazvanie_komanda_result.geotiff</div>
+<div class='text-line'>Решение на QGIS:</div>
+<div class='text-line'>1. Загрузи плагин Sentinel-1 Toolbox</div>
+<div class='text-line'>2. Найди и скачай снимки Sentinel-1 для нужного региона и периода</div>
+<div class='text-line'>3. Импортируй снимки в QGIS</div>
+<div class='text-line'>4. Примени фильтры для уменьшения шума</div>
+<div class='text-line'>5. Используй алгоритмы для выделения участков с разливом мазута</div>
 <br>
-<div class='text-line'>Решение на Python:</div>
-<br>
+<div class='text-line'>Код на Python:</div>
 <pre class='code-content'>import os
-import requests
-from osgeo import gdal, osr
+from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
+from datetime import date
 
-def download_files(url_jpeg, url_kml, output_dir):
-    os.makedirs(output_dir, exist_ok=True)
-    response_jpeg = requests.get(url_jpeg)
-    response_kml = requests.get(url_kml)
-    
-    with open(os.path.join(output_dir, 'image.jpeg'), 'wb') as f:
-        f.write(response_jpeg.content)
-    
-    with open(os.path.join(output_dir, 'image.kml'), 'wb') as f:
-        f.write(response_kml.content)
+api = SentinelAPI('your_username', 'your_password', 'https://scihub.copernicus.eu/dhus')
 
-def georeference_image(kml_path, jpeg_path, output_path):
-    from xml.etree import ElementTree
-    
-    with open(kml_path, 'r') as file:
-        kml_data = file.read()
-    
-    root = ElementTree.fromstring(kml_data)
-    coordinates = root.find('.//{http://www.opengis.net/kml/2.2}coordinates').text.strip().split(',')
-    
-    x_min, y_min = float(coordinates[0]), float(coordinates[1])
-    x_max, y_max = float(coordinates[2]), float(coordinates[3])
-    
-    ds = gdal.Open(jpeg_path)
-    width, height = ds.RasterXSize, ds.RasterYSize
-    geotransform = (x_min, (x_max - x_min) / width, 0, y_max, 0, -(y_max - y_min) / height)
-    
-    driver = gdal.GetDriverByName('GTiff')
-    out_ds = driver.CreateCopy(output_path, ds, 0)
-    out_ds.SetGeoTransform(geotransform)
-    
-    srs = osr.SpatialReference()
-    srs.ImportFromEPSG(3857)
-    out_ds.SetProjection(srs.ExportToWkt())
-    
-    out_ds.FlushCache()
-    del out_ds
+aoi = geojson_to_wkt(read_geojson('path_to_your_aoi.geojson'))
+products = api.query(aoi,
+                     date=('20241201', '20241231'),
+                     platformname='Sentinel-1',
+                     producttype='SLC')
 
-if __name__ == "__main__":
-    url_jpeg = 'https://disk.sputnix.ru/index.php/s/HbkKc34batcjkSX/download/image.jpeg'
-    url_kml = 'https://disk.sputnix.ru/index.php/s/HbkKc34batcjkSX/download/image.kml'
-    output_dir = 'data'
-    
-    download_files(url_jpeg, url_kml, output_dir)
-    
-    kml_path = os.path.join(output_dir, 'image.kml')
-    jpeg_path = os.path.join(output_dir, 'image.jpeg')
-    output_path = os.path.join(output_dir, 'nazvanie_komanda_result.geotiff')
-    
-    georeference_image(kml_path, jpeg_path, output_path)</pre>
+api.download_all(products)
+
+for product_id in products:
+    api.download(product_id)</pre>
+<br>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 14</div>
-                <div class="rating-button">👎 10</div>
+                <div class="rating-button">👍 29</div>
+                <div class="rating-button">👎 1</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -254,14 +213,36 @@ if __name__ == "__main__":
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #6f42c1;">СЛ</div>
+        <div class="other-avatar" style="background: #fd7e14;">АМ</div>
         <div class="author-info">
             <div class="author-name">
-                Степан Лебедев
-                <span class="comment-badge">тролль</span>
+                Алексей Макаров
+                <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>18.05.2021</span>
+                <span>27.06.2019</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        а как выйти из приложения?
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 24</div>
+        <div class="rating-button">👎 3</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #ffc107;">ПТ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Павел Титов
+                <span class="comment-badge">добряк</span>
+            </div>
+            <div class="meta">
+                <span>28.06.2019</span>
             </div>
         </div>
     </div>
@@ -269,58 +250,58 @@ if __name__ == "__main__":
         это понятно где можно бесплатно посмотреть сериалы?
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 14</div>
-        <div class="rating-button">👎 5</div>
+        <div class="rating-button">👍 16</div>
+        <div class="rating-button">👎 3</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #dc3545;">АБ</div>
+        <div class="other-avatar" style="background: #ffc107;">КМ</div>
         <div class="author-info">
             <div class="author-name">
-                Анатолий Белов
-                <span class="comment-badge">оптимист</span>
+                Кирилл Морозов
+                <span class="comment-badge">скептик</span>
             </div>
             <div class="meta">
-                <span>20.05.2021</span>
+                <span>01.07.2019</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        Я вообще не шарю в этом. Разбирайся сам!
+        Я в своё время тоже с этого начинал. Ничего, выучишься!
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 1</div>
-        <div class="rating-button">👎 6</div>
+        <div class="rating-button">👍 20</div>
+        <div class="rating-button">👎 1</div>
     </div>
 </div>
 
 <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #dc3545;">БС</div>
+        <div class="other-avatar" style="background: #fd7e14;">КК</div>
         <div class="author-info">
             <div class="author-name">
-                Борис Соловьев
-                <span class="comment-badge">оптимист</span>
+                Кирилл Козлов
+                <span class="comment-badge">прохожий</span>
             </div>
             <div class="meta">
-                <span>21.05.2021</span>
+                <span>01.07.2019</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        это слишком сложно
+        дайте монеток
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 2</div>
-        <div class="rating-button">👎 7</div>
+        <div class="rating-button">👍 10</div>
+        <div class="rating-button">👎 8</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2018
+            © Форум пользователей 2020
         </div>
     </div>
 

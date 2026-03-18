@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Владимир Смирнов - вопрос</title>
+    <title>Алексей Соколов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #e62e6b; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #ff9e00; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #43cc4c; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,113 +134,74 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #851179</span>
+            <span>Вопрос #466686</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">ВС</div>
+                <div class="avatar">АС</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Владимир Смирнов
-                        <span class="badge">Мудрец</span>
-                        <span class="reputation">136</span>
+                        Алексей Соколов
+                        <span class="badge">Ученик</span>
+                        <span class="reputation">4602</span>
                     </div>
                     <div class="meta">
-                        <span>18.04.2020</span>
+                        <span>10.02.2021</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 292</span>
+                        <span>👁 44</span>
                     </div>
                 </div>
             </div>
             <div class="question-title">
-                одна скука в этой жизни! дайте что-нибудь интересное
+                Блестните знаниями по тому чему вы обучались в вузе
             </div>
             <div class="question-body"></div>
         </div>
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">ГЕ</div>
+                <div class="answer-avatar">КЗ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Григорий Ефимов
-                        <span class="badge">Новичок</span>
-                        <span class="reputation">13288</span>
+                        Кирилл Зайцев
+                        <span class="badge">Эксперт</span>
+                        <span class="reputation">5125</span>
                     </div>
                     <div class="meta">
-                        <span>27.06.2020</span>
+                        <span>20.12.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <pre class='code-content'>import os
-import requests
-from bs4 import BeautifulSoup
-import rasterio
-from rasterio.transform import from_bounds
-import zipfile
+                <div class='text-line'>Решение на Python:</div>
+<br>
+<pre class='code-content'>from osgeo import gdal
+import os
 
-def download_files(url, output_dir):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    files = soup.find_all('tr', class_='files-list__row')
-    
-    for file in files:
-        name = file.find('button', class_='files-list__row-name-link').text.strip()
-        if name.endswith('.jpg') or name.endswith('.kml'):
-            file_url = f"{url}/{name}"
-            file_path = os.path.join(output_dir, name)
-            with open(file_path, 'wb') as f:
-                f.write(requests.get(file_url).content)
+def geotag_jpg_with_kml(jpg_path, kml_path, output_path):
+    ds = gdal.OpenEx(kml_path, gdal.OF_VECTOR)
+    layer = ds.GetLayer()
+    feature = next(layer)
+    geom = feature.GetGeometryRef()
+    lon lat = geom.GetX() geom.GetY()
 
-def georeference_image(jpg_path, kml_path, output_path):
-    with rasterio.open(jpg_path, 'r') as src:
-        image = src.read(1)
-        meta = src.meta
-
-    with open(kml_path, 'r') as kml_file:
-        kml_content = kml_file.read()
-        soup = BeautifulSoup(kml_content, 'lxml-xml')
-        coordinates = soup.find('coordinates').text.strip().split(' ')
-        coordinates = [list(map(float, coord.split(','))) for coord in coordinates]
-
-    min_x = min(coord[0] for coord in coordinates)
-    max_x = max(coord[0] for coord in coordinates)
-    min_y = min(coord[1] for coord in coordinates)
-    max_y = max(coord[1] for coord in coordinates)
-
-    transform = from_bounds(min_x, min_y, max_x, max_y, meta['width'], meta['height'])
-    meta.update({
-        'driver': 'GTiff',
-        'height': meta['height'],
-        'width': meta['width'],
-        'transform': transform,
-        'crs': 'EPSG:3857'
-    })
-
-    with rasterio.open(output_path, 'w', **meta) as dst:
-        dst.write(image, 1)
-
-if __name__ == "__main__":
-    url = 'https://disk.sputnix.ru/index.php/s/HbkKc34batcjkSX'
-    output_dir = 'data'
-    os.makedirs(output_dir, exist_ok=True)
-    
-    download_files(url, output_dir)
-    
-    for file in os.listdir(output_dir):
-        if file.endswith('.jpg'):
-            jpg_path = os.path.join(output_dir, file)
-            kml_path = os.path.join(output_dir, file.replace('.jpg', '.kml'))
-            output_path = f"nazvanie_komanda_result.geotiff"
-            georeference_image(jpg_path, kml_path, output_path)
-            break</pre>
+    cmd = f'exiftool -GPSLongitude={lon} -GPSLatitude={lat} {jpg_path} -o {output_path}'
+    os.system(cmd)</pre>
+<br>
+<div class='text-line'>Решение на QGIS:</div>
+<br>
+<div class='text-line'>1. Открой QGIS и загрузи KML файл через меню Layer -&gt; Add Layer -&gt; Add Vector Layer</div>
+<div class='text-line'>2. Выбери слой с точками из KML файла</div>
+<div class='text-line'>3. Открой таблицу атрибутов слоя</div>
+<div class='text-line'>4. Скопируй координаты точки которая соответствует твоему JPG</div>
+<div class='text-line'>5. Вставь координаты в EXIF данные JPG файла с помощью программы типа ExifTool или аналогичной</div>
+<div class='text-line'>6. Сохрани измененный JPG файл</div>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 26</div>
-                <div class="rating-button">👎 7</div>
+                <div class="rating-button">👍 61</div>
+                <div class="rating-button">👎 13</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -248,89 +209,45 @@ if __name__ == "__main__":
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #17a2b8;">ГП</div>
+        <div class="other-avatar" style="background: #fd7e14;">ВС</div>
         <div class="author-info">
             <div class="author-name">
-                Григорий Петров
-                <span class="comment-badge">оптимист</span>
-            </div>
-            <div class="meta">
-                <span>27.06.2020</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        это понятно где можно бесплатно посмотреть сериалы?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 5</div>
-        <div class="rating-button">👎 14</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #17a2b8;">БС</div>
-        <div class="author-info">
-            <div class="author-name">
-                Борис Соловьев
+                Валентин Соловьев
                 <span class="comment-badge">добряк</span>
             </div>
             <div class="meta">
-                <span>28.06.2020</span>
+                <span>22.12.2021</span>
             </div>
         </div>
     </div>
     <div class="other-answer-content">
-        это слишком сложно
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 12</div>
-        <div class="rating-button">👎 2</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #28a745;">ИД</div>
-        <div class="author-info">
-            <div class="author-name">
-                Игорь Денисов
-                <span class="comment-badge">шутник</span>
-            </div>
-            <div class="meta">
-                <span>28.06.2020</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        А самому слабо разобраться?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 17</div>
-        <div class="rating-button">👎 8</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">ВЗ</div>
-        <div class="author-info">
-            <div class="author-name">
-                Владимир Зайцев
-                <span class="comment-badge">тролль</span>
-            </div>
-            <div class="meta">
-                <span>29.06.2020</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        Понятия не имею, даже не знаю что сказать. Может кто умнее подскажет.
+        Я в своё время тоже с этого начинал. Ничего, выучишься!
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
         <div class="rating-button">👍 10</div>
-        <div class="rating-button">👎 5</div>
+        <div class="rating-button">👎 3</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #28a745;">ГС</div>
+        <div class="author-info">
+            <div class="author-name">
+                Григорий Семенов
+                <span class="comment-badge">оптимист</span>
+            </div>
+            <div class="meta">
+                <span>23.12.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        дайте монеток
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 12</div>
+        <div class="rating-button">👎 13</div>
     </div>
 </div>
 

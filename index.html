@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вячеслав Петров - вопрос</title>
+    <title>Денис Степанов - вопрос</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #edeff1; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #2c2d2e; padding: 20px; min-height: 100vh; }
@@ -21,7 +21,7 @@
         .breadcrumbs .sep { color: #aaadb3; }
         .question-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .question-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: #8c64ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; flex-shrink: 0; }
         .author-info { flex: 1; }
         .author-name { font-weight: 600; font-size: 16px; color: #2c2d2e; margin-bottom: 4px; }
         .meta { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #797a80; }
@@ -30,7 +30,7 @@
         .question-body { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; white-space: pre-wrap; }
         .answer-card { background: white; border-radius: 12px; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.08), 0 0 2px 0 rgba(0,0,0,0.08); margin-bottom: 20px; overflow: hidden; }
         .answer-header { padding: 20px 24px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #43cc4c; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
+        .answer-avatar { width: 40px; height: 40px; border-radius: 50%; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px; flex-shrink: 0; }
         .answer-content { padding: 12px 24px 24px 24px; font-size: 16px; color: #2c2d2e; line-height: 1.6; background: white; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; white-space: pre-wrap; word-wrap: break-word; }
         
         /* Стили для блоков кода */
@@ -134,22 +134,22 @@
             <span class="sep">•</span>
             <a href="#">Вопросы без ответа</a>
             <span class="sep">•</span>
-            <span>Вопрос #687839</span>
+            <span>Вопрос #330620</span>
         </div>
 
         <div class="question-card">
             <div class="question-header">
-                <div class="avatar">ВП</div>
+                <div class="avatar">ДС</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Вячеслав Петров
-                        <span class="badge">Эксперт</span>
-                        <span class="reputation">3739</span>
+                        Денис Степанов
+                        <span class="badge">Мудрец</span>
+                        <span class="reputation">198</span>
                     </div>
                     <div class="meta">
-                        <span>03.08.2017</span>
+                        <span>14.04.2018</span>
                         <span class="space-badge">Геоинформатика</span>
-                        <span>👁 74</span>
+                        <span>👁 62</span>
                     </div>
                 </div>
             </div>
@@ -161,51 +161,94 @@
 
         <div class="answer-card">
             <div class="answer-header">
-                <div class="answer-avatar">МЛ</div>
+                <div class="answer-avatar">ИВ</div>
                 <div class="author-info">
                     <div class="author-name">
-                        Михаил Лебедев
+                        Иван Волков
                         <span class="badge">Гуру</span>
-                        <span class="reputation">5467</span>
+                        <span class="reputation">8550</span>
                     </div>
                     <div class="meta">
-                        <span>25.06.2019</span>
+                        <span>02.01.2021</span>
                         <span>🏆 лучший ответ</span>
                     </div>
                 </div>
             </div>
             <div class="answer-content">
-                <div class='text-line'>Для мониторинга разлива мазута в Азовском море в декабре 2024 года лучше всего подойдут спутники с синтетической апертурной радарной (SAR) системой, так как они могут работать в любых погодных условиях и не зависят от освещения. Оптимальными вариантами будут спутники Sentinel-1 и Radarsat-2.</div>
+                <pre class='code-content'>import os
+import requests
+from bs4 import BeautifulSoup
+from osgeo import gdal, osr
+import zipfile
+
+def download_files(url, directory):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    files = []
+    for tr in soup.find_all('tr'):
+        file_name = tr.find('span', class_='files-list__row-name-').text
+        if file_name.endswith('.jpg') or file_name.endswith('.kml'):
+            file_url = f"{url}/{file_name}"
+            file_path = os.path.join(directory, file_name)
+            with open(file_path, 'wb') as f:
+                f.write(requests.get(file_url).content)
+            files.append(file_path)
+    return files
+
+def georeference_image(jpg_path, kml_path, output_path):
+    with open(kml_path, 'r') as f:
+        kml_content = f.read()
+    coordinates = []
+    start = '&lt;coordinates&gt;'
+    end = '&lt;/coordinates&gt;'
+    coords_str = kml_content[kml_content.index(start) + len(start):kml_content.index(end)].strip()
+    for coord in coords_str.split():
+        lon, lat, _ = map(float, coord.split(','))
+        coordinates.append((lon, lat))
+    
+    driver = gdal.GetDriverByName('GTiff')
+    dataset = gdal.Open(jpg_path)
+    geotransform = [
+        coordinates[0][0], (coordinates[1][0] - coordinates[0][0]) / dataset.RasterXSize, 0,
+        coordinates[0][1], 0, (coordinates[3][1] - coordinates[0][1]) / dataset.RasterYSize
+    ]
+    dataset.SetGeoTransform(geotransform)
+    
+    srs = osr.SpatialReference()
+    srs.ImportFromEPSG(3857)
+    dataset.SetProjection(srs.ExportToWkt())
+    
+    driver.CreateCopy(output_path, dataset, 0)
+
+if __name__ == "__main__":
+    url = "https://disk.sputnix.ru/index.php/s/HbkKc34batcjkSX"
+    directory = 'data'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    files = download_files(url, directory)
+    jpg_files = [f for f in files if f.endswith('.jpg')]
+    kml_files = [f for f in files if f.endswith('.kml')]
+    
+    for jpg_file in jpg_files:
+        base_name = os.path.splitext(os.path.basename(jpg_file))[0]
+        kml_file = os.path.join(directory, f"{base_name}.kml")
+        output_file = f"{base_name}_result.geotiff"
+        georeference_image(jpg_file, kml_file, output_file)</pre>
 <br>
 <div class='text-line'>Решение на QGIS:</div>
-<div class='text-line'>1. Загрузи плагин Sentinel-1 Toolbox</div>
-<div class='text-line'>2. Найди и скачай снимки Sentinel-1 для нужного региона и периода</div>
-<div class='text-line'>3. Импортируй снимки в QGIS</div>
-<div class='text-line'>4. Примени фильтры для уменьшения шума</div>
-<div class='text-line'>5. Используй алгоритмы для выделения участков с разливом мазута</div>
-<br>
-<div class='text-line'>Код на Python:</div>
-<pre class='code-content'>import os
-from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
-from datetime import date
-
-api = SentinelAPI('your_username', 'your_password', 'https://scihub.copernicus.eu/dhus')
-
-aoi = geojson_to_wkt(read_geojson('path_to_your_aoi.geojson'))
-products = api.query(aoi,
-                     date=('20241201', '20241231'),
-                     platformname='Sentinel-1',
-                     producttype='SLC')
-
-api.download_all(products)
-
-for product_id in products:
-    api.download(product_id)</pre>
-<br>
+<div class='text-line'>1. Открой QGIS и перейди в меню "Layer" -&gt; "Add Layer" -&gt; "Add Raster Layer".</div>
+<div class='text-line'>2. Выбери JPG файл, который хочешь геопривязать, и добавь его в проект.</div>
+<div class='text-line'>3. Перейди в меню "Raster" -&gt; "Projections" -&gt; "Assign Projection" и выбери проекцию EPSG:3857.</div>
+<div class='text-line'>4. Перейди в меню "Plugins" -&gt; "Manage and Install Plugins", найди и установи плагин "Georeferencer GDAL".</div>
+<div class='text-line'>5. Открой плагин "Georeferencer GDAL" и загрузи JPG файл.</div>
+<div class='text-line'>6. Добавь контрольные точки, используя координаты из KML файла.</div>
+<div class='text-line'>7. Сохраните геопривязанное изображение в формате GeoTIFF.</div>
+<div class='text-line'>8. Переименуй файл в формате `nazvanie_komanda_result.geotiff`.</div>
             </div>
             <div class="rating">
-                <div class="rating-button">👍 29</div>
-                <div class="rating-button">👎 1</div>
+                <div class="rating-button">👍 96</div>
+                <div class="rating-button">👎 9</div>
                 <div class="rating-button">💬 Ответить</div>
                 <div class="rating-button">🔗 Поделиться</div>
             </div>
@@ -213,80 +256,14 @@ for product_id in products:
 
         <div class="other-answer-card">
     <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">АМ</div>
+        <div class="other-avatar" style="background: #17a2b8;">ВС</div>
         <div class="author-info">
             <div class="author-name">
-                Алексей Макаров
-                <span class="comment-badge">добряк</span>
+                Валентин Семенов
+                <span class="comment-badge">местный</span>
             </div>
             <div class="meta">
-                <span>27.06.2019</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        а как выйти из приложения?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 24</div>
-        <div class="rating-button">👎 3</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">ПТ</div>
-        <div class="author-info">
-            <div class="author-name">
-                Павел Титов
-                <span class="comment-badge">добряк</span>
-            </div>
-            <div class="meta">
-                <span>28.06.2019</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        это понятно где можно бесплатно посмотреть сериалы?
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 16</div>
-        <div class="rating-button">👎 3</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #ffc107;">КМ</div>
-        <div class="author-info">
-            <div class="author-name">
-                Кирилл Морозов
-                <span class="comment-badge">скептик</span>
-            </div>
-            <div class="meta">
-                <span>01.07.2019</span>
-            </div>
-        </div>
-    </div>
-    <div class="other-answer-content">
-        Я в своё время тоже с этого начинал. Ничего, выучишься!
-    </div>
-    <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 20</div>
-        <div class="rating-button">👎 1</div>
-    </div>
-</div>
-
-<div class="other-answer-card">
-    <div class="other-answer-header">
-        <div class="other-avatar" style="background: #fd7e14;">КК</div>
-        <div class="author-info">
-            <div class="author-name">
-                Кирилл Козлов
-                <span class="comment-badge">прохожий</span>
-            </div>
-            <div class="meta">
-                <span>01.07.2019</span>
+                <span>04.01.2021</span>
             </div>
         </div>
     </div>
@@ -294,14 +271,102 @@ for product_id in products:
         дайте монеток
     </div>
     <div class="rating" style="padding: 0 24px 16px 58px;">
-        <div class="rating-button">👍 10</div>
-        <div class="rating-button">👎 8</div>
+        <div class="rating-button">👍 17</div>
+        <div class="rating-button">👎 5</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #ffc107;">АВ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Алексей Воробьев
+                <span class="comment-badge">оптимист</span>
+            </div>
+            <div class="meta">
+                <span>05.01.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        Я бы помог, но мне лень. Извини.
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 1</div>
+        <div class="rating-button">👎 2</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #fd7e14;">РЛ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Роман Лебедев
+                <span class="comment-badge">тролль</span>
+            </div>
+            <div class="meta">
+                <span>05.01.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        Понятия не имею, даже не знаю что сказать. Может кто умнее подскажет.
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 22</div>
+        <div class="rating-button">👎 5</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #dc3545;">СЕ</div>
+        <div class="author-info">
+            <div class="author-name">
+                Степан Егоров
+                <span class="comment-badge">шутник</span>
+            </div>
+            <div class="meta">
+                <span>07.01.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        Легко! Просто возьми калькулятор, высшую математику, пару справочников и реши. Чего тут сложного?
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 15</div>
+        <div class="rating-button">👎 6</div>
+    </div>
+</div>
+
+<div class="other-answer-card">
+    <div class="other-answer-header">
+        <div class="other-avatar" style="background: #dc3545;">ВО</div>
+        <div class="author-info">
+            <div class="author-name">
+                Василий Орлов
+                <span class="comment-badge">шутник</span>
+            </div>
+            <div class="meta">
+                <span>09.01.2021</span>
+            </div>
+        </div>
+    </div>
+    <div class="other-answer-content">
+        дайте монеток
+    </div>
+    <div class="rating" style="padding: 0 24px 16px 58px;">
+        <div class="rating-button">👍 24</div>
+        <div class="rating-button">👎 5</div>
     </div>
 </div>
 
         <div class="footer">
             <a href="#">О проекте</a> • <a href="#">Помощь</a> • <a href="#">Правила</a><br>
-            © Форум пользователей 2020
+            © Форум пользователей 2015
         </div>
     </div>
 
